@@ -4,8 +4,9 @@
 Logging module.
 """
 
-from os.path import join, abspath
+import sys
 import datetime
+from os.path import join, abspath
 
 log_file = '/tmp/ranger.log'
 
