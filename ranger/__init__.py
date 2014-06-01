@@ -55,4 +55,13 @@ def log_traceback():
     import traceback
     traceback.print_stack(file=open(LOGFILE, 'a'))
 
+# --------------------------
+import logging
+import os.path
+logging.cur_file = os.path.join(os.path.abspath('.'),__file__)
+logging.cur_pckg = str(__package__)
+
+logging.logg_modules()
+# --------------------------
+
 from ranger.core.main import main

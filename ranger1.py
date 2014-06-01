@@ -35,6 +35,17 @@ sys.dont_write_bytecode = '-c' in argv or '--clean' in argv
 if __file__[:4] == '/usr' and exists('ranger') and abspath('.') in sys.path:
     sys.path.remove(abspath('.'))
 
+# --------------------------
+import logging
+import os.path
+logging.cur_file = os.path.join(os.path.abspath('.'),__file__)
+logging.cur_pckg = str(__package__)
+
+logging.header()
+logging.logg_modules()
+logging.logg_modules()
+# --------------------------
+
 # Start ranger
 import ranger
 sys.exit(ranger.main())
